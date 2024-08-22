@@ -32,6 +32,7 @@ workflows:
         script: |
           cd product_listing_pkg
           flutter pub get
+          cd example
           export FLUTTER_BUILD_MODE=release-dev
           flutter build ios --release --no-codesign
     artifacts:
