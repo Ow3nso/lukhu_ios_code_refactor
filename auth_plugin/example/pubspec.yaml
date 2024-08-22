@@ -21,7 +21,7 @@ dependencies:
 
   lukhu_packages_pkg:
     git: 
-      url: git@github.com:Lukhu-Product/lukhu_packages_pkg.git
+      url: https://github.com/Ow3nso/lukhu_packages_pkg.git
       ref: main
 
   # The following adds the Cupertino Icons font to your application.
@@ -32,7 +32,7 @@ dependencies:
 dependency_overrides: 
   auth_plugin:
     git:
-      url: git@github.com:Lukhu-Product/auth_plugin.git
+      url: https://github.com/Ow3nso/auth_plugin.git
       ref: main
 
 dev_dependencies:
