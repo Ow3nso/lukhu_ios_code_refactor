@@ -1,0 +1,39 @@
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    max_build_duration: 60
+    environment:
+      flutter: 3.19.6
+      xcode: latest
+    scripts:
+      - name: Install dependencies
+        script: |
+          cd auth_plugin
+          flutter pub get
+          cd ../chat_pkg
+          flutter pub get
+          cd ../dukastax
+          flutter pub get
+          cd ../dukastax_pkg
+          flutter pub get
+          cd ../lukhu_packages_pkg
+          flutter pub get
+          cd ../lukhu_pay
+          flutter pub get
+          cd ../navigation_controller_pkg
+          flutter pub get
+          cd ../product_listing_pkg
+          flutter pub get
+          cd ../sales_pkg
+          flutter pub get
+          cd ..
+
+      - name: Build iOS app
+        script: |
+          cd product_listing_pkg
+          flutter pub get
+          export FLUTTER_BUILD_MODE=release-dev
+          flutter build ios --release --no-codesign
+    artifacts:
+      - build/ios/iphoneos/*.app
+      - build/ios/iphoneos/*.ipa
