@@ -41,4 +41,4 @@ workflows:
           flutter build ios --release --no-codesign -v
     artifacts:
       - product_listing_pkg/example/build/ios/iphoneos/*.app
-      - product_listing_pkg/example/build/ios/ipa/*.ipa
+      - product_listing_pkg/example/build/ios/iphoneos/*.ipa
