@@ -40,5 +40,5 @@ workflows:
           export FLUTTER_BUILD_MODE=release-dev
           flutter build ios --release --no-codesign -v
     artifacts:
-      - build/ios/iphoneos/*.app
-      - build/ios/iphoneos/*.ipa
+      - product_listing_pkg/example/build/ios/iphoneos/*.app
+      - product_listing_pkg/example/build/ios/ipa/*.ipa
