@@ -37,8 +37,10 @@ workflows:
           pod update FirebaseStorage
           pod install
           cd ..
-          export FLUTTER_BUILD_MODE=release-dev
+          export FLUTTER_BUILD_MODE=release
           flutter build ios --release --no-codesign -v
+          xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -sdk iphoneos -configuration Release archive -archivePath ../build/ios/Runner.xcarchive
+          xcodebuild -exportArchive -archivePath ../build/ios/Runner.xcarchive -exportOptionsPlist ios/Runner/ExportOptions.plist -exportPath ../build/ios/ipa
     artifacts:
-      - product_listing_pkg/example/build/ios/iphoneos/*.app
       - product_listing_pkg/example/build/ios/ipa/*.ipa
+      - product_listing_pkg/example/build/ios/iphoneos/*.app
