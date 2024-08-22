@@ -38,7 +38,7 @@ workflows:
           pod install
           cd ..
           export FLUTTER_BUILD_MODE=release-dev
-          flutter build ios --release --no-codesign
+          flutter build ios --release --no-codesign -v
     artifacts:
       - build/ios/iphoneos/*.app
       - build/ios/iphoneos/*.ipa
